@@ -1,0 +1,49 @@
+[project]
+name = "PokePagesWeb_Blackbluue"
+version = "0.0.1"
+authors = [
+    {name="Blackbluue", email="blackbluue@outlook.com"}
+]
+description = "Website front end for Poke Pages project."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+dependencies = [
+    "flask",
+    "pokebase",
+]
+
+[project.urls]
+Homepage = "https://github.com/Blackbluue/PokePagesWeb"
+Issues = "https://github.com/Blackbluue/PokePagesWeb/issues"
+
+[build-system]
+requires = ["flit_core >= 3.4"]
+build-backend = "flit_core.buildapi"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["pokepages"]
+
+[tool.mypy]
+mypy_path = "$MYPY_CONFIG_FILE_DIR"
+
+[tool.pylint.main]
+# Python code to execute, usually for sys.path manipulation such as
+# pygtk.require().
+init-hook ="import sys; sys.path.append('.')"
+
+# Minimum Python version to use for version dependent checks. Will default to the
+# version used to run pylint.
+py-version = "3.10"
+
+# Set the maximum number of parents for a class (see R0901).
+max-parents=10
